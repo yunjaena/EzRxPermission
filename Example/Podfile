@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'EzRxPermission_Example' do
+  pod 'EzRxPermission', :path => '../'
+
+  target 'EzRxPermission_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
