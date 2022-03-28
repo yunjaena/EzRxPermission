@@ -1,0 +1,16 @@
+PODS:
+  - EzRxPermission (0.1.0)
+
+DEPENDENCIES:
+  - EzRxPermission (from `../`)
+
+EXTERNAL SOURCES:
+  EzRxPermission:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EzRxPermission: 2cb58e9a6b803b105d03d5e68976c67e67da3e62
+
+PODFILE CHECKSUM: 32f6768c42ac747c2626c6a0afbe9e4476c17cd8
+
+COCOAPODS: 1.11.2

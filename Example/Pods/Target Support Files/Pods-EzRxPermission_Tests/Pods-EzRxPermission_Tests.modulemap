@@ -1,0 +1,6 @@
+framework module Pods_EzRxPermission_Tests {
+  umbrella header "Pods-EzRxPermission_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

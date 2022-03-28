@@ -1,0 +1,6 @@
+framework module EzRxPermission {
+  umbrella header "EzRxPermission-umbrella.h"
+
+  export *
+  module * { export * }
+}

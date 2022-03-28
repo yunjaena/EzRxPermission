@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EzRxPermission
 
 class ViewController: UIViewController {
 
