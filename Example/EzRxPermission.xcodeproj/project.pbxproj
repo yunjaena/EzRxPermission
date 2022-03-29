@@ -296,10 +296,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-EzRxPermission_Example/Pods-EzRxPermission_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EzRxPermission/EzRxPermission.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EzRxPermission.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
