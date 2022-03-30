@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import RxSwift
 import EzRxPermission
 
 class ViewController: UIViewController {
+    let disposBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        var notificationOption: NotificationOption? = nil
+        if #available(iOS 10.0, *) {
+            notificationOption = NotificationOption(option: [.alert, .badge, .sound])
+        }
+        EzRxPermission.getPermissions(permissions: [.UNUserNotificationCenter(options: notificationOption), .ATTrackingManager])
+            .subscribe(onNext: { result in
+                print(result)
+            }).disposed(by: disposBag)
+
+
     }
 
     override func didReceiveMemoryWarning() {
