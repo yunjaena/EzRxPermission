@@ -7,11 +7,22 @@
 
 import Foundation
 import RxSwift
+import AVFoundation
 
 public enum PermissionType {
-    case AVCaptureDevice
+    case AVCaptureDevice(type: AVMediaType)
     case PHPhotoLibrary
     case AVAudioSession
     case ATTrackingManager
+    case CBPeripheralManager
+    case CLLocationManager
+    case CNContactStore
     case UNUserNotificationCenter(options: NotificationOption?)
+}
+
+
+extension PermissionType {
+    public var request : Observable<PermissionResult> {
+        return PermissionFactory.getPermission(permission: self).requestPermission()
+    }
 }

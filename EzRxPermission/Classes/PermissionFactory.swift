@@ -11,16 +11,22 @@ import RxSwift
 class PermissionFactory {
     static func getPermission(permission: PermissionType) -> PermissionGrant {
         switch permission {
-        case .AVCaptureDevice:
-            break
+        case .AVCaptureDevice(type: let type):
+            return AVCaptureDevicePermission(type: type)
         case .PHPhotoLibrary:
-            break
+            return PHPhotoLibraryPermission()
         case .AVAudioSession:
-            break
+            return AVAudioSessionPermission()
         case .ATTrackingManager:
-            break
+            return AppTrackingPermission()
         case .UNUserNotificationCenter(options: let options):
-            return UNUserNotificationCenterPermission(notificationOption: options)
+            return CheckNotificationPermission(notificationOption: options)
+        case .CBPeripheralManager:
+            return CBPeripheralManagerPermission()
+        case .CLLocationManager:
+            return CLLocationManagerPermission()
+        case .CNContactStore:
+            return CNContactStorePermission()
         }
 
         return EmptyPermission()

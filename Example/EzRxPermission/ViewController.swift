@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import EzRxPermission
+import CoreBluetooth
 
 class ViewController: UIViewController {
     let disposBag = DisposeBag()
@@ -20,18 +21,17 @@ class ViewController: UIViewController {
         if #available(iOS 10.0, *) {
             notificationOption = NotificationOption(option: [.alert, .badge, .sound])
         }
-        EzRxPermission.getPermissions(permissions: [.UNUserNotificationCenter(options: notificationOption), .ATTrackingManager])
+
+        EzRxPermission.getPermissions(permissions: [.AVAudioSession, .UNUserNotificationCenter(options: notificationOption)])
             .subscribe(onNext: { result in
                 print(result)
             }).disposed(by: disposBag)
 
-
+        /*
+        PermissionType.CLLocationManager.request
+            .subscribe(onNext: { [weak self] result in
+                print(result)
+            }).disposed(by: disposBag)
+         */
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
-

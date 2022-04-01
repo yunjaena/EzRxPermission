@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Grant AppTracking Permission?</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Grant Bluetooth Permission?</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Grant Always Location Permission?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Grant When In Use Location Permission?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Grant MicroPhone Permission?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Grant Photo Album Permission?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Grant Camera Permission?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
