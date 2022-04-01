@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Grant Speech Permission?</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Grant Calendar Permission?</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Grant Media Permission?</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Grant Contact Permission?</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Grant AppTracking Permission?</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>

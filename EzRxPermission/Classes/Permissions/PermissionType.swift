@@ -8,15 +8,19 @@
 import Foundation
 import RxSwift
 import AVFoundation
+import EventKit
 
 public enum PermissionType {
-    case AVCaptureDevice(type: AVMediaType)
-    case PHPhotoLibrary
-    case AVAudioSession
     case ATTrackingManager
+    case AVAudioSession
+    case AVCaptureDevice(type: AVMediaType)
     case CBPeripheralManager
     case CLLocationManager
     case CNContactStore
+    case EKEventStore(type: EKEntityType)
+    case MPMediaLibrary
+    case PHPhotoLibrary
+    case SFSpeechRecognizer
     case UNUserNotificationCenter(options: NotificationOption?)
 }
 
