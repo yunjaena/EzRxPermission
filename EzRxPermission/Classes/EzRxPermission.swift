@@ -5,7 +5,7 @@ public struct EzRxPermission {
         var permissionObservers: [Observable<PermissionResult>] = []
         for permission in permissions {
             let permissionGrant = PermissionFactory.getPermission(permission: permission)
-            permissionObservers.append(permissionGrant.getPermission())
+            permissionObservers.append(permissionGrant.requestPermission())
         }
 
         return Observable.concat(permissionObservers)

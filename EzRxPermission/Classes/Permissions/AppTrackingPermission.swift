@@ -8,32 +8,38 @@
 import AppTrackingTransparency
 import RxSwift
 
-class AppTrackingPermission {
-    @available(iOS 14, *)
-    static func checkTrackingObserver() -> Observable<ATTrackingManager.AuthorizationStatus> {
+class AppTrackingPermission: PermissionGrant {
+    func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
-            var requestTrackingAuthorization: DispatchWorkItem?
-            requestTrackingAuthorization = DispatchWorkItem(block: {
-                if ((requestTrackingAuthorization?.isCancelled ?? true) == true) {
-                    return
-                }
-                ATTrackingManager.requestTrackingAuthorization { status in
-                    if((requestTrackingAuthorization?.isCancelled ?? true) == false) {
-                        observer.onNext(status)
-                        observer.onCompleted()
+            if #available(iOS 14.0, *) {
+                var requestTrackingAuthorization: DispatchWorkItem?
+                requestTrackingAuthorization = DispatchWorkItem(block: {
+                    if (requestTrackingAuthorization?.isCancelled == true) {
+                        return
                     }
+                    ATTrackingManager.requestTrackingAuthorization { status in
+                        if(requestTrackingAuthorization?.isCancelled == false) {
+                            observer.onNext(PermissionResult(permission: .ATTrackingManager, result: status == .denied ? .denied : .authorized))
+                            observer.onCompleted()
+                        }
+                    }
+                })
+
+                if ATTrackingManager.trackingAuthorizationStatus == .notDetermined, let requestTrackingAuthorization = requestTrackingAuthorization {
+                    // https://developer.apple.com/forums/thread/690607
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: requestTrackingAuthorization)
+                } else {
+                    observer.onNext(PermissionResult(permission: .ATTrackingManager, result: .authorized))
+                    observer.onCompleted()
                 }
-            })
 
-            if ATTrackingManager.trackingAuthorizationStatus == .notDetermined, let requestTrackingAuthorization = requestTrackingAuthorization {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: requestTrackingAuthorization)
+                return Disposables.create {
+                    requestTrackingAuthorization?.cancel()
+                }
             } else {
-                observer.onNext(.authorized)
+                observer.onNext(PermissionResult(permission: .ATTrackingManager, result: .authorized))
                 observer.onCompleted()
-            }
-
-            return Disposables.create {
-                requestTrackingAuthorization?.cancel()
+                return Disposables.create()
             }
         }
     }

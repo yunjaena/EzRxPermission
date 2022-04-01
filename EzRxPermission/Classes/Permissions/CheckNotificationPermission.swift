@@ -19,30 +19,30 @@ public class NotificationOption {
 }
 
 
-public class UNUserNotificationCenterPermission: PermissionGrant {
+public class CheckNotificationPermission: PermissionGrant {
     let notificationOption: NotificationOption?
 
     public init(notificationOption: NotificationOption?) {
         self.notificationOption = notificationOption
     }
 
-    func getPermission() -> Observable<PermissionResult> {
+    func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 10.0, *) {
                 guard let options = self.notificationOption?.options else {
-                    observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: .granted))
+                    observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: .authorized))
                     observer.onCompleted()
                     return Disposables.create()
                 }
                 UNUserNotificationCenter.current().requestAuthorization(
                     options: options,
                     completionHandler: { didAllow, _ in
-                        observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: didAllow ? .granted : .denied))
+                        observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: didAllow ? .authorized : .denied))
                         observer.onCompleted()
                     }
                 )
             } else {
-                observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: .granted))
+                observer.onNext(PermissionResult(permission: .UNUserNotificationCenter(options: self.notificationOption), result: .authorized))
                 observer.onCompleted()
             }
 

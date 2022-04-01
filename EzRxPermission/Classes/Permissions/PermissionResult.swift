@@ -9,16 +9,21 @@ import Foundation
 import RxSwift
 
 protocol PermissionGrant {
-    func getPermission() -> Observable<PermissionResult>
+    func requestPermission() -> Observable<PermissionResult>
+}
+
+public enum PermissionStatus {
+    case authorized
+    case denied
 }
 
 public class EmptyPermission: PermissionGrant {
-    func getPermission() -> Observable<PermissionResult> {
+    func requestPermission() -> Observable<PermissionResult> {
         return Observable.never()
     }
 }
 
 public struct PermissionResult {
-    let permission: PermissionType
-    let result: PermissionStatus
+    public let permission: PermissionType
+    public let result: PermissionStatus
 }
