@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             notificationOption = NotificationOption(option: [.alert, .badge, .sound])
         }
 
-        EzRxPermission.requestPermission(permissions: [.SFSpeechRecognizer])
+        EzRxPermission.requestPermission(permissions: [.MotionManager, .CNContactStore])
             .subscribe(onNext: { result in
                 print(result)
             }).disposed(by: disposBag)

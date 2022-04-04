@@ -25,6 +25,10 @@ class PermissionFactory {
             return CNContactStorePermission()
         case .EKEventStore(type: let type):
             return EKEventStorePermission(type: type)
+        case .INPreferences:
+            return INPreferencesPermission()
+        case .MotionManager:
+            return MotionManagerPermission()
         case .MPMediaLibrary:
             return MPMediaLibraryPermission()
         case .PHPhotoLibrary:

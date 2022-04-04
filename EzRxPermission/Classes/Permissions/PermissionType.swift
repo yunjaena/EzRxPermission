@@ -18,6 +18,8 @@ public enum PermissionType {
     case CLLocationManager
     case CNContactStore
     case EKEventStore(type: EKEntityType)
+    case INPreferences
+    case MotionManager
     case MPMediaLibrary
     case PHPhotoLibrary
     case SFSpeechRecognizer
