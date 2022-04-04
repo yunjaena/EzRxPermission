@@ -38,6 +38,11 @@
 		2E152E0431B702375D1152E417F4C448 /* Infallible+CombineLatest+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95F7591198780052FC7AC0D5515FCF0 /* Infallible+CombineLatest+arity.swift */; };
 		2ECC0A2527F55F2D00D09322 /* CBPeripheralManagerPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2427F55F2D00D09322 /* CBPeripheralManagerPermission.swift */; };
 		2ECC0A2727F564E800D09322 /* CNContactStorePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2627F564E800D09322 /* CNContactStorePermission.swift */; };
+		2ECC0A2927F6C7E800D09322 /* MPMediaLibraryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2827F6C7E800D09322 /* MPMediaLibraryPermission.swift */; };
+		2ECC0A2B27F6D81000D09322 /* EKEventStorePermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2A27F6D81000D09322 /* EKEventStorePermission.swift */; };
+		2ECC0A2D27F6DA8C00D09322 /* SFSpeechRecognizerPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2C27F6DA8C00D09322 /* SFSpeechRecognizerPermission.swift */; };
+		2ECC0A2F27FA756300D09322 /* MotionManagerPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A2E27FA756300D09322 /* MotionManagerPermission.swift */; };
+		2ECC0A3127FAAAA100D09322 /* INPreferencesPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC0A3027FAAAA000D09322 /* INPreferencesPermission.swift */; };
 		304B24F32238F6A232E30B0844D561F1 /* Binder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA5FC250B3F7F0912E396F6E698BFEC /* Binder.swift */; };
 		3263EF7F17446EF078A76216EF712145 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDD5FAFAF59360C96F4FA231D66BDAF /* Filter.swift */; };
 		3452A842BF2D1346603320B4084F933A /* Bag+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE861F2166D841EDD536153099FD3C86 /* Bag+Rx.swift */; };
@@ -270,6 +275,11 @@
 		2E9F2F6019CF0D5AA60604FCBCAD9E90 /* WithLatestFrom.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WithLatestFrom.swift; path = RxSwift/Observables/WithLatestFrom.swift; sourceTree = "<group>"; };
 		2ECC0A2427F55F2D00D09322 /* CBPeripheralManagerPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPeripheralManagerPermission.swift; sourceTree = "<group>"; };
 		2ECC0A2627F564E800D09322 /* CNContactStorePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CNContactStorePermission.swift; sourceTree = "<group>"; };
+		2ECC0A2827F6C7E800D09322 /* MPMediaLibraryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPMediaLibraryPermission.swift; sourceTree = "<group>"; };
+		2ECC0A2A27F6D81000D09322 /* EKEventStorePermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EKEventStorePermission.swift; sourceTree = "<group>"; };
+		2ECC0A2C27F6DA8C00D09322 /* SFSpeechRecognizerPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSpeechRecognizerPermission.swift; sourceTree = "<group>"; };
+		2ECC0A2E27FA756300D09322 /* MotionManagerPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManagerPermission.swift; sourceTree = "<group>"; };
+		2ECC0A3027FAAAA000D09322 /* INPreferencesPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INPreferencesPermission.swift; sourceTree = "<group>"; };
 		309FA6843589B62EAAF595A2B2C3FD54 /* Date+Dispatch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+Dispatch.swift"; path = "RxSwift/Date+Dispatch.swift"; sourceTree = "<group>"; };
 		319AB2EF5DA8BD251F8B921988D725E7 /* ShareReplayScope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShareReplayScope.swift; path = RxSwift/Observables/ShareReplayScope.swift; sourceTree = "<group>"; };
 		32539F4A650D2E69D3BA4D9FD1D3E059 /* EzRxPermission.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EzRxPermission.swift; path = EzRxPermission/Classes/EzRxPermission.swift; sourceTree = "<group>"; };
@@ -520,9 +530,14 @@
 				C0855D65E44CD955AE2A09D61ED9BCC8 /* CheckNotificationPermission.swift */,
 				BCDA4061630F46FC10C148502E650D60 /* CLLocationManagerPermission.swift */,
 				2ECC0A2627F564E800D09322 /* CNContactStorePermission.swift */,
+				2ECC0A2A27F6D81000D09322 /* EKEventStorePermission.swift */,
+				2ECC0A3027FAAAA000D09322 /* INPreferencesPermission.swift */,
+				2ECC0A2E27FA756300D09322 /* MotionManagerPermission.swift */,
+				2ECC0A2827F6C7E800D09322 /* MPMediaLibraryPermission.swift */,
+				E718D03B7F41D7644ED26AF2E3A04236 /* PHPhotoLibraryPermission.swift */,
+				2ECC0A2C27F6DA8C00D09322 /* SFSpeechRecognizerPermission.swift */,
 				8B4790458CED3419B0729342E3C9FC78 /* PermissionResult.swift */,
 				896977A0F24EFED635D0B0B08DE2C8F8 /* PermissionType.swift */,
-				E718D03B7F41D7644ED26AF2E3A04236 /* PHPhotoLibraryPermission.swift */,
 			);
 			name = Permissions;
 			path = EzRxPermission/Classes/Permissions;
@@ -1167,15 +1182,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ECC0A2927F6C7E800D09322 /* MPMediaLibraryPermission.swift in Sources */,
 				40E98B9DD65423A97F3DAC8F72BAF6D8 /* AppTrackingPermission.swift in Sources */,
 				455FA4FC370C795130EEF14EC8F5542D /* AVAudioSessionPermission.swift in Sources */,
 				BA5D1CEF8E76D3E4CCB1576E5681D0FF /* AVCaptureDevicePermission.swift in Sources */,
+				2ECC0A3127FAAAA100D09322 /* INPreferencesPermission.swift in Sources */,
 				2ECC0A2527F55F2D00D09322 /* CBPeripheralManagerPermission.swift in Sources */,
 				A95A974D52DB9A7102A1202C5E73C2C7 /* CheckNotificationPermission.swift in Sources */,
 				B0E819CE98CFE5089810C1EDE966B5F1 /* CLLocationManagerPermission.swift in Sources */,
+				2ECC0A2F27FA756300D09322 /* MotionManagerPermission.swift in Sources */,
 				94EF75E076EF92194C7053DAE423E034 /* EzRxPermission.swift in Sources */,
 				A938DF6C56408B8514541899B8DBFF0E /* EzRxPermission-dummy.m in Sources */,
 				41F6D56A575D0F9FE563401508B3CFA3 /* PermissionFactory.swift in Sources */,
+				2ECC0A2B27F6D81000D09322 /* EKEventStorePermission.swift in Sources */,
+				2ECC0A2D27F6DA8C00D09322 /* SFSpeechRecognizerPermission.swift in Sources */,
 				520914211D0D48B6B35C14B3FB28D3AA /* PermissionResult.swift in Sources */,
 				2ECC0A2727F564E800D09322 /* CNContactStorePermission.swift in Sources */,
 				B55FDEB04AA02A897E1C144D5AA01843 /* PermissionType.swift in Sources */,

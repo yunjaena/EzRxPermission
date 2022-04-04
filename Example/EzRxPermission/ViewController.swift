@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import EzRxPermission
-import CoreBluetooth
 
 class ViewController: UIViewController {
     let disposBag = DisposeBag()
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
             notificationOption = NotificationOption(option: [.alert, .badge, .sound])
         }
 
-        EzRxPermission.getPermissions(permissions: [.AVAudioSession, .UNUserNotificationCenter(options: notificationOption)])
+        EzRxPermission.requestPermission(permissions: [.MotionManager, .CNContactStore])
             .subscribe(onNext: { result in
                 print(result)
             }).disposed(by: disposBag)

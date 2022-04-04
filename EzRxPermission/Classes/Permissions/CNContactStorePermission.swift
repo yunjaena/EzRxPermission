@@ -12,8 +12,9 @@ import Contacts
 class CNContactStorePermission: PermissionGrant {
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
-            CNContactStore().requestAccess(for: .contacts) { _, _ in
-                return
+            CNContactStore().requestAccess(for: .contacts) { isGrant, error in
+                observer.onNext(PermissionResult(permission: .CNContactStore, result: isGrant ? .authorized : .denied))
+                observer.onCompleted()
             }
 
             return Disposables.create()

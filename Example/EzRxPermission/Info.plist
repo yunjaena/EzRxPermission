@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>Grant AppTracking Permission?</string>
-	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Grant Bluetooth Permission?</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Grant Always Location Permission?</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Grant When In Use Location Permission?</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Grant MicroPhone Permission?</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Grant Photo Album Permission?</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Grant Camera Permission?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -36,6 +22,32 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Grant Media Permission?</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Grant Bluetooth Permission?</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Grant Calendar Permission?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Grant Camera Permission?</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Grant Contact Permission?</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Grant Always Location Permission?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Grant When In Use Location Permission?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Grant MicroPhone Permission?</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Grant Motion Permission?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Grant Photo Album Permission?</string>
+	<key>NSSiriUsageDescription</key>
+	<string>Grant Siri Permission?</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Grant Speech Permission?</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Grant AppTracking Permission?</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
