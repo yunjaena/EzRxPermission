@@ -20,9 +20,45 @@ it, simply add the following line to your Podfile:
 pod 'EzRxPermission'
 ```
 
+## How to Use
+
+```Swift
+// MARK: - Single Permission
+PermissionType.CLLocationManager.request
+    .subscribe(
+        onNext: { [weak self] permission in
+            switch permission.result {
+            case .authorized:
+                print("Permission Authorized")
+            case .denied:
+                print("Permission Denied")
+            }
+        }
+    ).disposed(by: disposBag)
+
+// MARK: - Multiple Permission
+var notificationOption: NotificationOption? = nil
+
+if #available(iOS 10.0, *) {
+    notificationOption = NotificationOption(option: [.alert, .badge, .sound])
+}
+
+EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options: notificationOption), .CNContactStore])
+    .subscribe(
+        onNext: { permission in
+            switch permission.result {
+            case .authorized:
+                print("Permission Authorized")
+            case .denied:
+                print("Permission Denied")
+            }
+        }
+    ).disposed(by: disposBag)
+```
+
 ## Author
 
-yunjaena, yunjaena@platb.ai
+yunjaena, jinbaejeong
 
 ## License
 
