@@ -21,16 +21,28 @@ class ViewController: UIViewController {
             notificationOption = NotificationOption(option: [.alert, .badge, .sound])
         }
 
-        EzRxPermission.requestPermission(permissions: [.MotionManager, .CNContactStore])
-            .subscribe(onNext: { result in
-                print(result)
-            }).disposed(by: disposBag)
+        EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options: notificationOption), .CNContactStore])
+            .subscribe(
+                onNext: { permission in
+                    switch permission.result {
+                    case .authorized:
+                        print("Permission Authorized")
+                    case .denied:
+                        print("Permission Denied")
+                    }
+                }
+            ).disposed(by: disposBag)
 
-        /*
         PermissionType.CLLocationManager.request
-            .subscribe(onNext: { [weak self] result in
-                print(result)
-            }).disposed(by: disposBag)
-         */
+            .subscribe(
+                onNext: { [weak self] permission in
+                    switch permission.result {
+                    case .authorized:
+                        print("Permission Authorized")
+                    case .denied:
+                        print("Permission Denied")
+                    }
+                }
+            ).disposed(by: disposBag)
     }
 }
