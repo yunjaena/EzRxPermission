@@ -9,6 +9,16 @@ import AppTrackingTransparency
 import RxSwift
 
 class AppTrackingPermission: PermissionGrant {
+    var isGranted: Bool {
+        get {
+            if #available(iOS 14, *) {
+                return ATTrackingManager.trackingAuthorizationStatus == .authorized
+            } else {
+                return true
+            }
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 14.0, *) {

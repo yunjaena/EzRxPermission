@@ -10,6 +10,10 @@ import EventKit
 import RxSwift
 
 class EKEventStorePermission: PermissionGrant {
+    var isGranted: Bool {
+        return EKEventStore.authorizationStatus(for: self.entityType) == .authorized
+    }
+
     var entityType: EKEntityType = .event
 
     init(type: EKEntityType = .event) {

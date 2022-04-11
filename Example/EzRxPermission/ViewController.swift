@@ -21,6 +21,8 @@ class ViewController: UIViewController {
             notificationOption = NotificationOption(option: [.alert, .badge, .sound])
         }
 
+        print("IsGrant : ", PermissionType.UNUserNotificationCenter().isGranted)
+
         EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options: notificationOption), .CNContactStore])
             .subscribe(
                 onNext: { permission in

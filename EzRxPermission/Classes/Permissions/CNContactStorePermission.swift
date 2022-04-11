@@ -10,6 +10,10 @@ import RxSwift
 import Contacts
 
 class CNContactStorePermission: PermissionGrant {
+    var isGranted: Bool {
+        return CNContactStore.authorizationStatus(for: .contacts) == .authorized
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             CNContactStore().requestAccess(for: .contacts) { isGrant, error in

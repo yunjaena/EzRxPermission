@@ -10,6 +10,18 @@ import RxSwift
 import CoreBluetooth
 
 class CBPeripheralManagerPermission: NSObject, PermissionGrant {
+    var isGranted: Bool {
+        get {
+            if #available(iOS 13.1, *) {
+                return CBCentralManager.authorization == .allowedAlways
+            } else if #available(iOS 13.0, *) {
+                return CBCentralManager().authorization == .allowedAlways
+            }
+
+            return true
+        }
+    }
+
     private var peripheral: CBPeripheral!
     private var centralManager: CBCentralManager!
 

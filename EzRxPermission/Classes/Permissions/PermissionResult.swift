@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 protocol PermissionGrant {
+    var isGranted: Bool { get }
     func requestPermission() -> Observable<PermissionResult>
 }
 
@@ -18,6 +19,8 @@ public enum PermissionStatus {
 }
 
 public class EmptyPermission: PermissionGrant {
+    var isGranted: Bool = false
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.never()
     }

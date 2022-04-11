@@ -17,6 +17,14 @@ public enum MotionType {
 }
 
 class MotionManagerPermission: PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 11.0, *) {
+            return CMMotionActivityManager.authorizationStatus() == .authorized
+        } else {
+            return true
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             let manager = CMMotionActivityManager()

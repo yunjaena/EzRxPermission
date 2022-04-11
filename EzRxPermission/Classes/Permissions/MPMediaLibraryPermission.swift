@@ -10,6 +10,14 @@ import MediaPlayer
 import RxSwift
 
 class MPMediaLibraryPermission: PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 9.3, *) {
+            return MPMediaLibrary.authorizationStatus() == .authorized
+        } else {
+            return true
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 9.3, *) {

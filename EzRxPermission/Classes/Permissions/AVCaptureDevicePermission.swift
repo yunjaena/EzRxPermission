@@ -10,6 +10,12 @@ import AVFoundation
 import RxSwift
 
 class AVCaptureDevicePermission: PermissionGrant {
+    var isGranted: Bool {
+        get {
+            return AVCaptureDevice.authorizationStatus(for: self.type) ==  .authorized
+        }
+    }
+
     let type: AVMediaType
 
     init(type: AVMediaType) {

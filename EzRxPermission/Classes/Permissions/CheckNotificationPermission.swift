@@ -20,6 +20,27 @@ public class NotificationOption {
 
 
 public class CheckNotificationPermission: PermissionGrant {
+    var isGranted: Bool {
+        let semaphore = DispatchSemaphore(value: 0)
+        var status: Bool = false
+
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().getNotificationSettings { settings in
+                switch settings.authorizationStatus {
+                case .authorized: status = true
+                default: status = false
+                }
+
+                semaphore.signal()
+            }
+            _ = semaphore.wait(timeout: .distantFuture)
+        } else {
+            status = true
+        }
+
+        return status
+    }
+
     let notificationOption: NotificationOption?
 
     public init(notificationOption: NotificationOption?) {
