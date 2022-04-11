@@ -13,11 +13,11 @@ import EventKit
 public enum PermissionType {
     case ATTrackingManager
     case AVAudioSession
-    case AVCaptureDevice(type: AVMediaType)
+    case AVCaptureDevice(type: AVMediaType? = nil)
     case CBPeripheralManager
     case CLLocationManager
     case CNContactStore
-    case EKEventStore(type: EKEntityType)
+    case EKEventStore(type: EKEntityType? = nil)
     case INPreferences
     case MotionManager
     case MPMediaLibrary
