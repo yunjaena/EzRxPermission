@@ -5,13 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/EzRxPermission.svg?style=flat)](https://cocoapods.org/pods/EzRxPermission)
 [![Platform](https://img.shields.io/cocoapods/p/EzRxPermission.svg?style=flat)](https://cocoapods.org/pods/EzRxPermission)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
 
-## Installation
+### Version
+
+- Swift : 5.0
+- RxSwift : '~> 6.5.0'
+
+### Installation
 
 EzRxPermission is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -28,7 +30,8 @@ pod 'EzRxPermission'
 PermissionType.UNUserNotificationCenter().isGranted
 ```
 
-### Request permission
+### Request permission (Single)
+
 ```Swift
 // MARK: - Single Permission
 PermissionType.CLLocationManager.request
@@ -42,7 +45,11 @@ PermissionType.CLLocationManager.request
             }
         }
     ).disposed(by: disposBag)
+```
 
+### Request permission (Multiple)
+
+```swift
 // MARK: - Multiple Permission
 var notificationOption: NotificationOption? = nil
 
@@ -83,7 +90,7 @@ EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options
 
 ## Author
 
-yunjaena, jinbaejeong
+[yunjaena](https://github.com/yunjaena), [jinbaejeong](https://github.com/92pino)
 
 ## License
 
