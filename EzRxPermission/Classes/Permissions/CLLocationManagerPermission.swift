@@ -10,6 +10,14 @@ import RxSwift
 import CoreLocation
 
 class CLLocationManagerPermission: NSObject, PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 14.0, *) {
+            return CLLocationManager().authorizationStatus == .authorizedAlways || CLLocationManager().authorizationStatus == .authorizedWhenInUse
+        } else {
+            return CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse
+        }
+    }
+
     let locationManager = CLLocationManager()
 
     let permissionPublishSubject = PublishSubject<PermissionResult>()

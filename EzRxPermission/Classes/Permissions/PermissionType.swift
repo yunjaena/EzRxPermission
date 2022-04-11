@@ -23,11 +23,15 @@ public enum PermissionType {
     case MPMediaLibrary
     case PHPhotoLibrary
     case SFSpeechRecognizer
-    case UNUserNotificationCenter(options: NotificationOption?)
+    case UNUserNotificationCenter(options: NotificationOption? = nil)
 }
 
 
 extension PermissionType {
+    public var isGranted: Bool {
+        return PermissionFactory.getPermission(permission: self).isGranted
+    }
+
     public var request : Observable<PermissionResult> {
         return PermissionFactory.getPermission(permission: self).requestPermission()
     }

@@ -10,6 +10,14 @@ import Speech
 import RxSwift
 
 class SFSpeechRecognizerPermission: PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 10.0, *) {
+            return SFSpeechRecognizer.authorizationStatus() == .authorized
+        } else {
+            return true
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 10.0, *) {

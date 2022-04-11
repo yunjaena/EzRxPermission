@@ -30,7 +30,6 @@
 /* Begin PBXFileReference section */
 		22EB3BB3C9E284412599D81E /* Pods-EzRxPermission_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzRxPermission_Example.debug.xcconfig"; path = "Target Support Files/Pods-EzRxPermission_Example/Pods-EzRxPermission_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2984431AB42714D519A9F21F /* Pods-EzRxPermission_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EzRxPermission_Example.release.xcconfig"; path = "Target Support Files/Pods-EzRxPermission_Example/Pods-EzRxPermission_Example.release.xcconfig"; sourceTree = "<group>"; };
-		2ECC0A3227FAABDC00D09322 /* EzRxPermission_ExampleDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EzRxPermission_ExampleDebug.entitlements; sourceTree = "<group>"; };
 		3C90764FF80823602E286E91 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* EzRxPermission_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EzRxPermission_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,7 +72,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				2ECC0A3227FAABDC00D09322 /* EzRxPermission_ExampleDebug.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for EzRxPermission */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -486,7 +484,7 @@
 			baseConfigurationReference = 22EB3BB3C9E284412599D81E /* Pods-EzRxPermission_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = EzRxPermission_ExampleDebug.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VB5KPC8TUV;

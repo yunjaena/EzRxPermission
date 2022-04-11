@@ -10,6 +10,14 @@ import Photos
 import RxSwift
 
 class PHPhotoLibraryPermission: PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 14, *) {
+            return PHPhotoLibrary.authorizationStatus(for: .readWrite) == .authorized
+        } else {
+            return PHPhotoLibrary.authorizationStatus() == .authorized
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 14, *) {

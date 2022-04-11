@@ -10,6 +10,12 @@ import AVFoundation
 import RxSwift
 
 class AVAudioSessionPermission: PermissionGrant {
+    var isGranted: Bool {
+        get {
+            return AVAudioSession.sharedInstance().recordPermission() == .granted
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             AVAudioSession.sharedInstance().requestRecordPermission { didAllow in

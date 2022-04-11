@@ -10,6 +10,14 @@ import Intents
 import RxSwift
 
 class INPreferencesPermission: PermissionGrant {
+    var isGranted: Bool {
+        if #available(iOS 10.0, *) {
+            return INPreferences.siriAuthorizationStatus() == .authorized
+        } else {
+            return true
+        }
+    }
+
     func requestPermission() -> Observable<PermissionResult> {
         return Observable.create { observer in
             if #available(iOS 10.0, *) {
