@@ -57,6 +57,8 @@ extension CLLocationManagerPermission: CLLocationManagerDelegate {
                 return
             case .restricted, .denied:
                 permissionStatus = .denied
+            @unknown default:
+                permissionStatus = .denied
             }
             permissionPublishSubject.onNext(PermissionResult(permission: .CLLocationManager, result: permissionStatus))
             permissionPublishSubject.onCompleted()
@@ -71,6 +73,8 @@ extension CLLocationManagerPermission: CLLocationManagerDelegate {
         case .notDetermined:
             return
         case .restricted, .denied:
+            permissionStatus = .denied
+        @unknown default:
             permissionStatus = .denied
         }
         permissionPublishSubject.onNext(PermissionResult(permission: .CLLocationManager, result: permissionStatus))

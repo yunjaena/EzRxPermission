@@ -38,7 +38,5 @@ class PermissionFactory {
         case .UNUserNotificationCenter(options: let options):
             return CheckNotificationPermission(notificationOption: options)
         }
-
-        return EmptyPermission()
     }
 }
