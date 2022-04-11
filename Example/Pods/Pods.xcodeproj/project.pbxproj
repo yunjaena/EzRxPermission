@@ -408,7 +408,7 @@
 		CDA8D67D8E70B05B99F1B84D5C5F1AF5 /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
 		CDAFEE1A5383F71305722A4493DD766A /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = RxSwift/Observables/Optional.swift; sourceTree = "<group>"; };
 		CDB045EC85E152DC694503246D272A60 /* MainScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MainScheduler.swift; path = RxSwift/Schedulers/MainScheduler.swift; sourceTree = "<group>"; };
-		D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EzRxPermission; path = EzRxPermission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EzRxPermission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D456A18CF11BA523908BEA5B4D87FED8 /* AsyncSubject.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncSubject.swift; path = RxSwift/Subjects/AsyncSubject.swift; sourceTree = "<group>"; };
 		D4CEB5598A0D2D1329EF8ED45FCD6B6F /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
 		D6E9B047545F368AFDF2A109897AE1DD /* First.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = First.swift; path = RxSwift/Observables/First.swift; sourceTree = "<group>"; };
@@ -818,7 +818,7 @@
 		FFF2873CFC25C6C826F05FE71149C48B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission */,
+				D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission.framework */,
 				CB72933408C63DA973697CD30878CCB6 /* Pods-EzRxPermission_Example */,
 				1FF0A5E2E9FDE7E7E34DFBEED23B619C /* Pods-EzRxPermission_Tests */,
 				809C5FAB588354C9BA37DC3EAB8CB45C /* RxSwift */,
@@ -919,7 +919,7 @@
 			);
 			name = EzRxPermission;
 			productName = EzRxPermission;
-			productReference = D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission */;
+			productReference = D046641900DF074AC0C73CE79EF8E097 /* EzRxPermission.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EA9EA43B3B503823EE36C60D9C8A865F /* RxSwift */ = {
@@ -1459,7 +1459,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1490,7 +1490,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

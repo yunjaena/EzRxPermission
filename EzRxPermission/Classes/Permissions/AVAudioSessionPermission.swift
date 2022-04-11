@@ -12,7 +12,7 @@ import RxSwift
 class AVAudioSessionPermission: PermissionGrant {
     var isGranted: Bool {
         get {
-            return AVAudioSession.sharedInstance().recordPermission() == .granted
+            return AVAudioSession.sharedInstance().recordPermission == .granted
         }
     }
 
