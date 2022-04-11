@@ -22,11 +22,18 @@ pod 'EzRxPermission'
 
 ## How to Use
 
+### Check permission granted
+
+```swift
+PermissionType.UNUserNotificationCenter().isGranted
+```
+
+### Request permission
 ```Swift
 // MARK: - Single Permission
 PermissionType.CLLocationManager.request
     .subscribe(
-        onNext: { [weak self] permission in
+        onNext: { permission in
             switch permission.result {
             case .authorized:
                 print("Permission Authorized")
@@ -55,6 +62,24 @@ EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options
         }
     ).disposed(by: disposBag)
 ```
+
+## Options
+
+| Permission                                                                                                        | PermissionType     | Option             |
+|-------------------------------------------------------------------------------------------------------------------|--------------------|--------------------|
+| [AVAudioSession](https://developer.apple.com/documentation/avfaudio/avaudiosession)                               | Microphone         |                    |
+| [AVCaptureDevice](https://developer.apple.com/documentation/avfoundation/avcapturedevice/)                        | Camera             | AVMediaType        |
+| [ATTrackingManager](https://developer.apple.com/documentation/apptrackingtransparency/attrackingmanager/)         | AppTracking        |                    |
+| [CBPeripheralManager](https://developer.apple.com/documentation/corebluetooth/cbperipheralmanager/)               | Bluetooth          |                    |
+| [CLLocationManager](https://developer.apple.com/documentation/corelocation/cllocationmanager/)                    | GPS                |                    |
+| [CNContactStore](https://developer.apple.com/documentation/contacts/cncontactstore/)                              | Contacts           |                    |
+| [UNUserNotificationCenter](https://developer.apple.com/documentation/usernotifications/unusernotificationcenter/) | Notification       | NotificationOption |
+| [EKEventStore](https://developer.apple.com/documentation/eventkit/ekeventstore/)                                  | Calendar           | EKEntityType       |
+| [INPreferences](https://developer.apple.com/documentation/foundation/preferences/)                                | Siri               |                    |
+| [MPMediaLibrary](https://developer.apple.com/documentation/mediaplayer/mpmedialibrary/)                           | Media library      |                    |
+| [MotionManager](https://developer.apple.com/documentation/coremotion/cmmotionmanager/)                            | Motion             |                    |
+| [PHPhotoLibrary](https://developer.apple.com/documentation/photokit/phphotolibrary/)                              | Photo library      |                    |
+| [SFSpeechRecognizer](https://developer.apple.com/documentation/speech/sfspeechrecognizer)                         | Speech recognition |                    |
 
 ## Author
 
