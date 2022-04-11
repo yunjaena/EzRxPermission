@@ -1,7 +1,7 @@
 {
   "name": "EzRxPermission",
   "version": "0.1.0",
-  "summary": "A short description of EzRxPermission.",
+  "summary": "Ez permisison checker for iOS",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/yunjaena/EzRxPermission",
   "license": {
@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "yunjaena": "yunjaena@platb.ai"
+    "yunjaena": "yunjaena@gmail.com"
   },
   "source": {
     "git": "https://github.com/yunjaena/EzRxPermission.git",
@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "EzRxPermission/Classes/**/*"
+  "source_files": "EzRxPermission/Classes/**/*",
+  "dependencies": {
+    "RxSwift": [
+      "~> 6.5.0"
+    ]
+  }
 }

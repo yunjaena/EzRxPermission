@@ -7,19 +7,44 @@
 //
 
 import UIKit
+import RxSwift
 import EzRxPermission
 
 class ViewController: UIViewController {
+    let disposBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        var notificationOption: NotificationOption? = nil
+        if #available(iOS 10.0, *) {
+            notificationOption = NotificationOption(option: [.alert, .badge, .sound])
+        }
 
+        print("IsGrant : ", PermissionType.UNUserNotificationCenter().isGranted)
+
+        EzRxPermission.requestPermission(permissions: [.UNUserNotificationCenter(options: notificationOption), .CNContactStore])
+            .subscribe(
+                onNext: { permission in
+                    switch permission.result {
+                    case .authorized:
+                        print("Permission Authorized")
+                    case .denied:
+                        print("Permission Denied")
+                    }
+                }
+            ).disposed(by: disposBag)
+
+        PermissionType.CLLocationManager.request
+            .subscribe(
+                onNext: { permission in
+                    switch permission.result {
+                    case .authorized:
+                        print("Permission Authorized")
+                    case .denied:
+                        print("Permission Denied")
+                    }
+                }
+            ).disposed(by: disposBag)
+    }
 }
-
